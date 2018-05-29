@@ -21,9 +21,8 @@ class Search extends React.Component {
 
 
 
-        this.props.fetchPhotos(value.toLowerCase(), value)
-        setTimeout(function() { }, 1000);
-        this.props.fetchPosts(value)
+
+        this.props.fetchPosts(value, value.toLowerCase())
     }
 
 

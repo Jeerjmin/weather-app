@@ -58,7 +58,7 @@ export function failurePhotos(value) {
     }
 }
 
-export function fetchPosts(value, lowerValue) {
+export function fetchPosts(value, valueLower) {
     return function (dispatch) {
         dispatch(requestPosts())
 
@@ -72,17 +72,24 @@ export function fetchPosts(value, lowerValue) {
 
 
         return (
-            fetch(request).then(response => {
-                if(response.ok) {
-                    return response.json()
-                } else {
-                    alert("Не верно указан город")
 
-                }
-            })
-                .then(json =>
-                    dispatch(receivePosts(json, value))
-                )
+           fetch(request)
+               .then(response => {
+                   if (response.ok) {
+                       dispatch(fetchPhotos(valueLower, value))
+                       return response.json()
+                   }
+                   else
+                       alert("Не верно указан город")
+               })
+
+               .then((json) => {
+                   return dispatch(receivePosts(json, value));
+               }
+
+               )
+
+
         )
 
 

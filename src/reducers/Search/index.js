@@ -6,16 +6,18 @@ const defaultState = {
 
 export const DataReducer = (state = defaultState, action) => {
     if (action.type === 'RECEIVE_POSTS') {
+
         let arrayvar = state.data.slice()
-
-
         let doubleCard = arrayvar.filter( x => x.name === action.value )
 
-        if (doubleCard.length === 0) {
-            if (action.posts) {
+        if ( (doubleCard.length === 0) && (action.posts) ) {
                 arrayvar.push(action.posts)
-            }
+        }
 
+        else if ((doubleCard.length === 1) && (action.posts)) {
+            let index = arrayvar.indexOf(doubleCard[0])
+            arrayvar[arrayvar.length] = arrayvar[index]
+            arrayvar.splice(index,1)
         }
 
 
@@ -27,7 +29,6 @@ export const DataReducer = (state = defaultState, action) => {
 
     if (action.type === 'RECEIVE_PHOTOS') {
         let arrayvar = state.photos.slice()
-        let arraydata = state.data.slice()
 
         let photoarray = {}
         photoarray.name = action.value
@@ -38,21 +39,22 @@ export const DataReducer = (state = defaultState, action) => {
 
         if (doubleCard.length === 0) {
             arrayvar.push(photoarray)
-            console.log("PHOTOS-YES", doubleCard)
         }
 
-        else {
-            console.log("PHOTOS-NO", doubleCard)
-
+        else if (doubleCard.length === 1)  {
+            let index = arrayvar.indexOf(doubleCard[0])
+            arrayvar[arrayvar.length] = arrayvar[index]
+            arrayvar.splice(index,1)
         }
 
-        console.log("photoarray", photoarray)
-        return {...state, photos: arrayvar}
+
+           return {...state, photos: arrayvar}
+
+
     }
 
     if (action.type === 'FAILURE_PHOTOS') {
         let arrayvar = state.photos.slice()
-        let arraydata = state.data.slice()
 
         let photoarray = {}
         photoarray.name = action.value
@@ -61,11 +63,18 @@ export const DataReducer = (state = defaultState, action) => {
 
         let doubleCard = arrayvar.filter( x => x.name === action.value )
 
-        if (doubleCard.length === 0)   {
+
+        if  (doubleCard.length === 0)     {
             arrayvar.push(photoarray)
         }
 
-            return {...state, photos: arrayvar}
+        else if (doubleCard.length === 1)  {
+            let index = arrayvar.indexOf(doubleCard[0])
+            arrayvar[arrayvar.length] = arrayvar[index]
+            arrayvar.splice(index,1)
+        }
+
+        return {...state, photos: arrayvar}
 
     }
 
