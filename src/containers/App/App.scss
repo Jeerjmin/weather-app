@@ -1,0 +1,152 @@
+.AppRoot {
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SearchRoot {
+    background-color: #52658F;
+
+    padding: 0;
+
+}
+
+.Cards {
+    background-color: #E8E8E8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Card {
+    background-color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+
+
+.NameTemp {
+    display: flex;
+    flex-direction: column;
+}
+
+.CityImg {
+    width: 80%;
+    height: 100%;
+    align-self: center;
+}
+
+img {
+    width: 100%;
+    max-height: 300px;
+}
+
+
+
+.CloseSvg > svg {
+    width: 40px;
+    height: 40px;
+}
+
+.SearchSvg > svg {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.Search {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+Input {
+    background-color: #52658F;
+    width: 90%;
+    height: 100%;
+    font-size: 60px;
+    margin-left: 15px;
+    border: 0;
+}
+
+Input::placeholder {
+    color:black;
+    opacity: 0.5;
+}
+
+Button {
+    background-color: #52658F;
+    width: 7%;
+    height: 73px;
+    border: 0;
+    padding: 0;
+    margin-right: 15px;
+    float: right;
+
+
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .CityImg {
+        max-width: 75%;
+    }
+
+    Input {
+        width: 85%;
+        font-size: 50px;
+    }
+
+    Button {
+        width: 10%;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .CityImg {
+        max-width: 70%;
+    }
+
+    Input {
+        width: 80%;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .CityImg {
+        max-width: 65%;
+    }
+}
+@media (max-width: 600px) {
+
+    .CityImg {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .CityImg {
+        max-width: 55%;
+    }
+}
+@media (max-width: 400px) {
+
+    .CityImg {
+        max-width: 50%;
+    }
+}

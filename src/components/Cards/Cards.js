@@ -29,7 +29,7 @@ class Cards extends React.Component {
         console.log("cities",cities)
 
         return (
-            <div>
+            <div className="Cards">
                 {cities.map((city,i) => {
                     return (
                         < Card

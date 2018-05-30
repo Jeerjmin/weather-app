@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+import SVGInline from 'react-svg-inline';
+import CloseSvg from '../../assets/close.svg'
 import {deleteCard} from '../../actions/index'
 
 class Card extends React.Component {
@@ -22,11 +24,19 @@ class Card extends React.Component {
 
         return (
 
-            <div>
-                <h1>{this.props.name}</h1>
-                <h2>{this.props.temp}°C</h2>
-                <img src={this.props.img} alt={this.props.name}/>
-                <input type="button" value="Close" onClick={(e) => this.clickClose(this.props.index)}/>
+            <div className="Card">
+                <div className="CloseSvgDiv">
+                    <SVGInline className="CloseSvg" svg={CloseSvg} onClick={(e) => this.clickClose(this.props.index)}/>
+                </div>
+
+                <div className="NameTemp">
+                    <h1>{this.props.name}</h1>
+                    <h2>{this.props.temp}°C</h2>
+
+                </div>
+                <div className="CityImg">
+                    <img src={this.props.img} alt={this.props.name}/>
+                </div>
             </div>
 
         )
