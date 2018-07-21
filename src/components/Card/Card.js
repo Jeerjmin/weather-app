@@ -1,32 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
 import SVGInline from 'react-svg-inline';
 import CloseSvg from '../../assets/close.svg'
 import {deleteCard} from '../../actions/index'
 
 class Card extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.clickClose = this.clickClose.bind(this)
-    }
 
 
-    clickClose(i) {
-        this.props.deleteCard(i)
-    }
 
     render() {
-
-        console.log("key", this.props.index)
-
-
         return (
 
             <div className="Card">
                 <div className="CloseSvgDiv">
-                    <SVGInline className="CloseSvg" svg={CloseSvg} onClick={(e) => this.clickClose(this.props.index)}/>
+                    <SVGInline className="CloseSvg" svg={CloseSvg} onClick={() => this.props.deleteCity(this.props.index)}/>
                 </div>
 
                 <div className="NameTemp">
@@ -43,17 +29,6 @@ class Card extends React.Component {
     }
 }
 
-const mapStateToProps = () => (
-    {
 
-    }
-)
 
-const matchDispatchToProps = dispatch => bindActionCreators(
-    {
-        deleteCard
-    },
-    dispatch
-)
-
-export default connect(mapStateToProps, matchDispatchToProps)(Card)
+export default Card

@@ -67,7 +67,7 @@ img {
 
 }
 
-Input {
+.Search Input {
     background-color: #52658F;
     width: 90%;
     height: 100%;
@@ -81,7 +81,7 @@ Input::placeholder {
     opacity: 0.5;
 }
 
-Button {
+.Search Button {
     background-color: #52658F;
     width: 7%;
     height: 73px;
@@ -101,12 +101,12 @@ Button {
         max-width: 75%;
     }
 
-    Input {
+    .Search Input {
         width: 85%;
         font-size: 50px;
     }
 
-    Button {
+    .Search Button {
         width: 10%;
     }
 
@@ -119,7 +119,7 @@ Button {
         max-width: 70%;
     }
 
-    Input {
+    .Search Input {
         width: 80%;
         font-size: 40px;
     }
