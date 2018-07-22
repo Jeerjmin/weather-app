@@ -3,7 +3,7 @@
 <h4> This application was created using:
 Webpack, React, React-Router, Express, Mongoose. Auth/login with help: bcrypt-nodejs, jsonwebtoken</h4>
 
-![alt text](http://rgho.st/8dP4q5wsf/image.png)
+![alt text](https://ibb.co/hZ5hKJ)
 
  <p> To run, you need to install and start MongoDB. <a href="https://www.mongodb.com/">link to official site</a></p>
  <p>After this:</p>
